@@ -2,7 +2,7 @@
 
 # Prerequisites
 
-- [Node](https://nodejs.org) v4 OR v6 (the two [LTS](https://github.com/nodejs/LTS) versions)
+- [Node](https://nodejs.org) v6 + (v4 might work, no promises)
 - PHP 5.4, 5.5, 5.6, OR 7 (5.3 might work, no promises)
 - [`composer`](https://getcomposer.org)
 
@@ -70,6 +70,27 @@ Afterwards, you'll need to add them to Drupal and Pattern Lab:
 2. Drupal: Add them to the appropriate library in the `*.libraries.yml` file and attach them where needed.
 
 Using `--save` shows it's intention to be used in Pattern Lab and Drupal; using `--save-dev` shows it's just for Pattern Lab.
+
+### Icons and SVGs
+
+Two systems exists for flexibility: SVGs as HTML elements, and SVGs compiled into Font Icons.
+
+#### SVG Elements
+
+Useful for larger, less frequently used vector images that potentially could be multi-color or able to animate.
+
+1. Place `file.svg` in `images/svgs/` and possible minify yourself.
+2. Use it in Twig templates like so: `{{ source('@svgs/file.svg') }}` ([info on `source`](http://twig.sensiolabs.org/doc/1.x/functions/source.html))
+
+#### SVG => Font Icons
+
+Useful for small, frequently used icons that are a single color which is changeable via CSS.
+
+1. Place `file.svg` in `images/icons/src/`
+2. See it automatically appear in Pattern Lab at "Atoms > Images > Icons".
+3. Use either way:
+    - HTML class: `icon--file`
+    - Sass Mixin: `@include icon(file)`
 
 ### Sass Libraries
 
