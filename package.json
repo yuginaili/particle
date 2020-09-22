@@ -76,7 +76,7 @@
     "husky": "^1.0.0-rc.9",
     "iconfont-plugin-webpack": "^1.1.0",
     "jest": "^22.4.3",
-    "js-yaml": "^3.11.0",
+    "js-yaml": "^3.13.1",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.3",
